@@ -14,7 +14,7 @@ class VideosController extends Controller
             $videoData = create_default_video();
         } else {
             $video = Video::findOrFail($id);
-            $videoData = create_default_video(); // Use default video data
+            $videoData = create_default_video();
         }
 
         return view('videos.show', ['video' => $videoData]);
