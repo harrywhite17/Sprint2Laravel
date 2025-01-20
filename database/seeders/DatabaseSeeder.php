@@ -1,11 +1,11 @@
 <?php
 
-// database/seeders/DatabaseSeeder.php
-
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use App\Helpers\UserHelpers;
+use App\Helpers\VideoHelpers;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,5 +21,11 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        $userHelpers = new UserHelpers();
+        $userHelpers->create_default_user();
+
+        $videoHelpers = new VideoHelpers();
+        $videoHelpers->create_default_video();
     }
 }
